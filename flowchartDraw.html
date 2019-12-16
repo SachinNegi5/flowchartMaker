@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      color: white;
+    }
+
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .left {
+      left: 0;
+      background-color: #27a70e;
+    }
+
+    .right {
+      right: 0;
+      background-color: red;
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .centered img {
+      width: 150px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body id="bodyId" onchange="myChangeFunction()"">
+
+  <div class="split left">
+    <div class="left" id="left-content">
+      <form action="/action_page.php">
+        Stage Name:
+        <input type="text" id="name" name="stageName">
+        <select id="sel">
+          <option value="start">Start</option>
+          <option value="end">End</option>
+          <option value="condition">Condition</option>
+          <option value="operation">Operation</option>
+          <option value="subroutine">Subroutine</option>
+          <option value="inputoutput">Input Output</option>
+        </select>
+        <button onclick="myfun();return false;" >+</button>
+        </form>
+    </div>
+  </div>
+
+  <div class="split right">
+    <div class="centered">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQtHE3LyWJDO5axJeDcgaqCHEKrWbGatO8ACF7bqNtDd-cETGtJ"
+        alt="Avatar man">
+      <h2>Pika BO<sup>ooooo</sup></h2>
+      <font color="black"><sup>
+          <p>Your FlowChart will appear here.</p>
+      </font>
+    </div>
+  </div>
+<script src="./myScript.js"></script>
+</body>
+
+</html>
