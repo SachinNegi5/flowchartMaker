@@ -15,15 +15,16 @@ Stage Name:
 <button onclick="myfun();return false;" >+</button>
 </form>`
 let obj = []
+let flow=''
 var diagram
-function myfun() {
+function variableDefiner() {
     diagram = document.getElementById("name").value + "=>" + document.getElementById("sel").value + ":" + document.getElementById("name").value
     obj.push(diagram)
     console.log(obj)
-    console.log(document.getElementById('name').value)
-    console.log(document.getElementById("sel").value)
-    // leftContent.innerHTML += inputHTML;
+    flow = flow+document.getElementById("name").value+'->'
+    console.log(flow)
+    myChangeFunction()
 }
-function myChangeFunction(){
-    drawer = drawer + document.getElementById("name").value+"->"
+function flowChartDisplayer(){
+    console.log("FLOW==========="+flow)    
 }
