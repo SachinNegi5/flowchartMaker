@@ -15,16 +15,24 @@ Stage Name:
 <button onclick="myfun();return false;" >+</button>
 </form>`
 let obj = []
-let flow=''
+let flow =''
+let str = ''
 var diagram
 function variableDefiner() {
     diagram = document.getElementById("name").value + "=>" + document.getElementById("sel").value + ":" + document.getElementById("name").value
     obj.push(diagram)
     console.log(obj)
+    
     flow = flow+document.getElementById("name").value+'->'
     console.log(flow)
-    myChangeFunction()
+
+    flowChartDisplayer()
 }
 function flowChartDisplayer(){
-    console.log("FLOW==========="+flow)    
+    obj.forEach(function(el){
+        str = str + el + '\n'
+        })
+        str = str.concat(flow)
+        console.log(str)
+    console.log("FLOW===========" +  str)    
 }

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.13.0/flowchart.min.js"> </script>
+
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,20 +62,14 @@
           <option value="subroutine">Subroutine</option>
           <option value="inputoutput">Input Output</option>
         </select>
-        <button onclick="myfun();return false;" >+</button>
+        <button onclick="variableDefiner();return false;" >+</button>
         </form>
     </div>
   </div>
 
   <div class="split right">
-    <div class="centered">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQtHE3LyWJDO5axJeDcgaqCHEKrWbGatO8ACF7bqNtDd-cETGtJ"
-        alt="Avatar man">
-      <h2>Pika BO<sup>ooooo</sup></h2>
-      <font color="black"><sup>
-          <p>Your FlowChart will appear here.</p>
-      </font>
+    <div class="centered" id="flowchart">
+     
     </div>
   </div>
 <script src="./myScript.js"></script>
