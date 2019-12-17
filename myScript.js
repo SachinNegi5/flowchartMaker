@@ -14,25 +14,47 @@ Stage Name:
 </select>
 <button onclick="myfun();return false;" >+</button>
 </form>`
+
+
+let str
+
 let obj = []
 let flow =''
-let str = ''
 var diagram
 function variableDefiner() {
+    
     diagram = document.getElementById("name").value + "=>" + document.getElementById("sel").value + ":" + document.getElementById("name").value
     obj.push(diagram)
     console.log(obj)
     
     flow = flow+document.getElementById("name").value+'->'
     console.log(flow)
-
+    
     flowChartDisplayer()
 }
 function flowChartDisplayer(){
-    obj.forEach(function(el){
-        str = str + el + '\n'
+    return new Promise(async(resolve,reject)=>{
+        str = ''
+        obj.forEach(function(el){
+            str = str + el + '\n'
         })
         str = str.concat(flow)
+        newFun(str)
         console.log(str)
-    console.log("FLOW===========" +  str)    
+        console.log("FLOW===========" +  str)    
+        return resolve(str)
+    })
+}
+
+function newFun(str){
+    try{
+    console.log("IN FUN==="+str)
+    // var d = flowChartDisplayer()
+    // console.log("D========"+d)
+    var diagram = flowchart.parse(str);
+    diagram.drawSVG(document.getElementById('flowchart'));
+    }
+    catch(e){
+        console.log(e)
+    }
 }
