@@ -14,14 +14,16 @@ Stage Name:
 </select>
 <button onclick="myfun();return false;" >+</button>
 </form>`
-
+let obj = []
+var diagram
 function myfun() {
-    var diagram = document.getElementById("name").value + "=>" + document.getElementById("sel").value + ":" + document.getElementById("name").value
-    console.log(diagram)
-    leftContent.innerHTML += inputHTML;
+    diagram = document.getElementById("name").value + "=>" + document.getElementById("sel").value + ":" + document.getElementById("name").value
+    obj.push(diagram)
+    console.log(obj)
+    console.log(document.getElementById('name').value)
+    console.log(document.getElementById("sel").value)
+    // leftContent.innerHTML += inputHTML;
 }
 function myChangeFunction(){
-    console.log("changing")
     drawer = drawer + document.getElementById("name").value+"->"
-    console.log(drawer)
 }
