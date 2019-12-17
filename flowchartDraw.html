@@ -25,12 +25,12 @@
 
     .left {
       left: 0;
-      background-color: #e9e9e9e1;
+      background-color: #8f6c6ce1;
     }
 
     .right {
       right: 0;
-      background-color: grey;
+      background-color: whitesmoke;
     }
 
     .centered {
@@ -54,7 +54,7 @@
     <div class="left" id="left-content">
       <form action="/action_page.php">
         Stage Name:
-        <input type="text" id="name" name="stageName">
+        <input type="text" id="name" name="stageName" required>
         <select id="sel">
           <option value="start">Start</option>
           <option value="end">End</option>
@@ -70,9 +70,6 @@
 
   <div class="split right">
     <div class="centered" id="flowchart">
-      <!-- <script>
-        newFun('xyz')
-  </script> -->
     </div>
   </div>
 </body>

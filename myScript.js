@@ -23,7 +23,7 @@ let flow =''
 var diagram
 function variableDefiner() {
     
-    diagram = document.getElementById("name").value + "=>" + document.getElementById("sel").value + ":" + document.getElementById("name").value
+    diagram = document.getElementById("name").value + "=>" + document.getElementById("sel").value + ": " + document.getElementById("name").value
     obj.push(diagram)
     console.log(obj)
     
@@ -48,13 +48,20 @@ function flowChartDisplayer(){
 
 function newFun(str){
     try{
-    console.log("IN FUN==="+str)
-    // var d = flowChartDisplayer()
-    // console.log("D========"+d)
-    var diagram = flowchart.parse(str);
-    diagram.drawSVG(document.getElementById('flowchart'));
+        document.getElementById('flowchart').innerHTML = "";
+        document.getElementById('flowchart').classList.add('centered')
+        // document.getElementById('flowchart').style.display='none'
+        // let stt = `start=>start: start
+        //     op1=>operation: op1
+        //     op2=>operation: op2
+        //     start->op1(right)->op1->op2`
+
+        console.log(document.getElementById('flowchart')+"<=IN FUN==="+str)
+            var diagram = flowchart.parse(str);
+            diagram.drawSVG('flowchart');
     }
     catch(e){
+        console.log("EXCEPTION CAUGHT")
         console.log(e)
     }
 }
